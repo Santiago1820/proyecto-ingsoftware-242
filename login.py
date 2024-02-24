@@ -3,27 +3,28 @@ from tkinter import messagebox, ttk
 import mostrar
 from db import conexion
 from encrypt import encriptar
+from ttkbootstrap.constants import *
 
 class LoginPage(Tk.Frame):
     def __init__(self, parent):
         Tk.Frame.__init__(self, parent)
         self.parent = parent
         
-        self.username_label = Tk.Label(self, text="Usuario:")
+        self.username_label = ttk.Label(self, text="Usuario:", bootstyle="light")
         self.username_label.pack()
-        self.username_entry = Tk.Entry(self)
+        self.username_entry = ttk.Entry(self, bootstyle="light")
         self.username_entry.pack()
 
-        self.password_label = Tk.Label(self, text="Contraseña:")
+        self.password_label = ttk.Label(self, text="Contraseña:", bootstyle="light")
         self.password_label.pack()
-        self.password_entry = Tk.Entry(self, show="*")
+        self.password_entry = ttk.Entry(self, show="*", bootstyle="light")
         self.password_entry.pack()
  
         self.type_user = ttk.Combobox(values=["Administrador", "Usuario"], state="readonly")
         self.type_user.current(1)
         self.type_user.pack()
 
-        self.login_button = Tk.Button(self, text="Iniciar sesión", command=self.login)
+        self.login_button = ttk.Button(self, text="Iniciar sesión", bootstyle=(LIGHT, OUTLINE), cursor="hand2", command=self.login)
         self.login_button.pack()
 
     def login(self):
