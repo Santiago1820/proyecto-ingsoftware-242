@@ -1,8 +1,8 @@
 import tkinter as Tk
 from tkinter import messagebox, ttk
-import mostrar
-from db import conexion
-from encrypt import encriptar
+import pages.mostrar as mostrar
+from pages.db import conexion
+from pages.encrypt import encriptar
 from ttkbootstrap.constants import *
 
 class LoginPage(Tk.Frame):

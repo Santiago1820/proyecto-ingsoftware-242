@@ -1,5 +1,5 @@
-from encrypt import encriptar
-from db import conexion
+from pages.encrypt import encriptar
+from pages.db import conexion
 from tkinter import messagebox
 import tkinter as Tk
 

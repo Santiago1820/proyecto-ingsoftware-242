@@ -1,5 +1,5 @@
 import ttkbootstrap
-import login
+from pages import login
 
 root = ttkbootstrap.Window(themename="darkly")
 root.title("Iniciar Sesión")

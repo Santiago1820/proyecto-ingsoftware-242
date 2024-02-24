@@ -1,7 +1,7 @@
 import tkinter as Tk
-import dash, register, admin
+import pages.dash as dash, pages.register as register, pages.admin as admin
 import sys
-from db import conexion
+from pages.db import conexion
 
 nombresys = "Sistema - Registro v1.0"
 conectar = conexion()
