@@ -1,6 +1,6 @@
 import tkinter as Tk
 from tkinter import messagebox, ttk
-import pages.mostrar as mostrar
+import pages.controller as controller
 from pages.db import conexion
 from pages.encrypt import encriptar
 from ttkbootstrap.constants import *
@@ -50,15 +50,15 @@ class LoginPage(Tk.Frame):
             if tipo == "Administrador":
                 cursor.execute(f"SELECT estudios FROM usuarios WHERE usuario = '{username}' AND estudios = '{tipo}'")
                 tipo_usr = cursor.fetchone()
-                mostrar.cerrar_conexion()
+                controller.cerrar_conexion()
                 if tipo_usr:
                     self.parent.withdraw()
-                    mostrar.show_admin()
+                    controller.show_admin()
                 else:
                     messagebox.showerror("Error", "No eres Administrador")
             else:
                 self.parent.withdraw()
-                mostrar.show_dash()
+                controller.show_dash()
         else:
             messagebox.showerror("Error", "Usuario o contraseña incorrectos.")
 

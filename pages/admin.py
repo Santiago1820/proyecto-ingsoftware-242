@@ -1,5 +1,5 @@
 import tkinter as Tk
-import pages.mostrar as mostrar
+import pages.controller as controller
 
 class Admin(Tk.Frame):
     def __init__(self, parent):
@@ -9,7 +9,7 @@ class Admin(Tk.Frame):
         self.label = Tk.Label(self, text="¡Hola Mundo!, este es admin")
         self.label.pack()
 
-        self.login_button = Tk.Button(self, text="Ir a admin", command=mostrar.cerrar_app)
+        self.login_button = Tk.Button(self, text="Ir a admin", command=controller.cerrar_app)
         self.login_button.pack()
 
 
