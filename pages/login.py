@@ -57,7 +57,7 @@ class LoginPage(Tk.Frame):
         if respuesta:
             # Verificar el tipo de usuario
             if tipo == "Administrador":
-                cursor.execute(f"SELECT estudios FROM usuarios WHERE usuario = '{username}' AND estudios = '{tipo}'")
+                cursor.execute(f"SELECT tipo FROM usuarios WHERE usuario = '{username}' AND tipo = '{tipo}'")
                 tipo_usr = cursor.fetchone()
                 controller.cerrar_conexion()
                 # Si el usuario es administrador, mostrar la ventana de administrador

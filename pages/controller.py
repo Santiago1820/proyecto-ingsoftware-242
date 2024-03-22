@@ -1,5 +1,5 @@
 import tkinter as Tk
-import pages.dash as dash, pages.register as register, pages.admin as admin
+import pages.dash as dash, pages.register as register, pages.admin as admin, pages.tareas as tareas
 import sys
 from pages.db import conexion
 from config import *
@@ -15,7 +15,7 @@ def cerrar_conexion():
     cursor.close()
     conectar.close()
 
-# Metodo para mostrarnuestra ventana de registro
+# Metodo para mostrar nuestra ventana de registro
 def show_register():
     # Creamos nuestra nueva ventana
     new_root = Tk.Tk()
@@ -46,6 +46,15 @@ def show_admin():
     new_root.attributes('-fullscreen', True)
     new_root.title(f"{namesys}")
     admin_page = admin.Admin(new_root)
+    admin_page.pack()
+    new_root.mainloop()
+
+def show_tareas():
+    new_root = Tk.Tk()
+    new_root.protocol("WM_DELETE_WINDOW", no_cerrar)
+    new_root.attributes('-fullscreen', True)
+    new_root.title(f"{namesys}")
+    admin_page = tareas.Tareas(new_root)
     admin_page.pack()
     new_root.mainloop()
 

@@ -2,10 +2,11 @@ import mysql.connector
 def conexion ():
     try:
         conexion = mysql.connector.connect(
-            host = "sql3.freemysqlhosting.net",
-            user = "sql3680163",
-            password = "PJ6R8RqwBc",
-            database = "sql3680163"
+            host = "peb.h.filess.io",
+            user = "IngSoftware_sizeherdas",
+            password = "redes_password",
+            database = "IngSoftware_sizeherdas",
+            port = "3307"
         )
         return conexion
     except mysql.connector.Error as e:
