@@ -25,6 +25,11 @@ def show_register():
     new_root.protocol("WM_DELETE_WINDOW", no_cerrar)
     # Mostramos la pagina en modo pantalla completa
     new_root.attributes('-fullscreen', True)
+
+    # Creamos un estilo y aplicamos el tema 'darkly'
+    style = style(theme='darkly')
+    style.theme_use('darkly')
+
     # Creamos nuestro registro y a imprimimos
     register_page = register.Registro(new_root)
     register_page.pack()
